@@ -11,6 +11,8 @@ import { UserResolver } from './services/userResolver';
 import { ApiServiceService } from './services/api-service.service';
 import { HttpClientModule } from '@angular/common/http';
 import { RepositoriesComponent } from './repositories/repositories.component';
+import { RepoResolver } from './services/repoResolver';
+import { FollowerResolver } from './services/followerResolver';
 
 
 @NgModule({
@@ -28,7 +30,9 @@ import { RepositoriesComponent } from './repositories/repositories.component';
   ],
   providers: [
     ApiServiceService, 
-    UserResolver
+    UserResolver,
+    RepoResolver,
+    FollowerResolver
   ],
   bootstrap: [AppComponent]
 })

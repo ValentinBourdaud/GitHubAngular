@@ -18,4 +18,6 @@ export class UserResolver implements Resolve<any> {
         return this.user;
 
     }
+
+    
 }

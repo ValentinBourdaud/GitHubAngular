@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { User } from '../user/user';
 import { ParamMap } from '@angular/router';
 import { ApiServiceService } from '../services/api-service.service';
+import Repository from '../repositories/repository';
+import Follower from '../follower/follower';
 
 @Component({
   selector: 'app-details',
@@ -13,6 +15,8 @@ export class DetailsComponent implements OnInit {
 
   login : string;
   user : User;
+  repo : Repository;
+  follow : Follower;
   
   constructor(private route: ActivatedRoute, private api : ApiServiceService) { }
 

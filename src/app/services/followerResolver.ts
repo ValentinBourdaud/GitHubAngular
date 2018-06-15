@@ -4,21 +4,21 @@ import { Injectable } from "@angular/core";
 import { ApiServiceService } from "./api-service.service";
 import { User } from "../user/user";
 import Repository from "../repositories/repository";
+import Follower from "../follower/follower";
 
 @Injectable()
-export class RepoResolver implements Resolve<any> {
+export class FollowerResolver implements Resolve<any> {
 
-    repo: Observable<Array<Repository>>;
+    follower: Observable<Array<Follower>>;
 
     constructor(private api: ApiServiceService) {
 
     }
 
     resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any {
-        this.repo = this.api.getRepos(route.params['repo']);
-        return this.repo;
+        this.follower = this.api.getFollower(route.params['follower']);
+        return this.follower;
 
     }
 
-    
 }
