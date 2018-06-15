@@ -1,3 +1,14 @@
-<p>
-  details works!
-</p>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+<div class="card">
+  <img class="card-img-top" src="{{user.avatar_url}}" alt="user avatar">
+  <div class="card-body">
+    <h5 class="card-title">{{user.login | titlecase}}</h5>
+    <p class="card-text">
+      {{user.bio}} <br/>
+      <strong>Type : </strong>{{user.type}} <br/>
+      <strong>Company : </strong>{{user.company}} <br/>
+      <strong>Location : </strong>{{user.location}}
+    </p>
+  </div>
+</div>

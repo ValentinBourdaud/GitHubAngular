@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { PATH_DETAIL } from '../constantes';
+import { ApiServiceService } from '../services/api-service.service';
+
 
 @Component({
   selector: 'app-home',
@@ -7,9 +11,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
-
   ngOnInit() {
   }
 
+  constructor(private router: Router, private api:ApiServiceService) { }
+
+  navigateToDetail(login : string) {
+    this.api.getUsers(login).toPromise()
+    .then(() => this.router.navigate([PATH_DETAIL, login])
+  )
+    .catch(
+      err => console.log(err)
+    );
+  }
 }
