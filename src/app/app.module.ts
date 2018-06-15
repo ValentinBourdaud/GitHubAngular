@@ -10,13 +10,15 @@ import { ROUTES } from './app.routes';
 import { UserResolver } from './services/userResolver';
 import { ApiServiceService } from './services/api-service.service';
 import { HttpClientModule } from '@angular/common/http';
+import { RepositoriesComponent } from './repositories/repositories.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    DetailsComponent
+    DetailsComponent,
+    RepositoriesComponent
   ],
   imports: [
     BrowserModule,
